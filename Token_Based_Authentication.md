@@ -150,6 +150,8 @@ In order for the RefreshToken to be successfully set and sent by the mobile app,
 Note:
 When adding a session to a table in the database, it is worth checking how many refresh sessions the user has in total, and if there are too many of them or the user connects simultaneously from several domains, it is worth taking action. You can check that the user has a maximum of 5 simultaneous refresh sessions, and when trying to install the next one, delete the previous ones. All other checks are up to you, depending on the task.
 
+![User Authentication with JWT sequence diagram](/media/User_Authentication_with_JWT_sequence_diagram.webp "User Authentication with JWT sequence diagram")
+
 ## Refresh Access token
 
 To use the authentication feature on more than one device, you need to store all the refresh tokens for each user. During each login, a record is created with IP and other meta information, the so-called Refresh Session.
@@ -165,6 +167,8 @@ To use the authentication feature on more than one device, you need to store all
 9. Make request with new Access token;
 10. The server checks the user’s rights (Authorization);
 11. If the user has the necessary rights, then he gets the result, otherwise he gets an error, for example, 403 status code;
+
+![Refresh session sequence diagram](/media/Refresh_session_sequence_diagram.webp "Refresh session sequence diagram")
 
 For example, I drew a sequence diagram of the Refresh token flow (the diagram does not cover the case when the refresh-session ends with an error, for example, due to an expired Refresh token):
 
