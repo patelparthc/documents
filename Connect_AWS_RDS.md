@@ -21,4 +21,4 @@ We require 5 params for mysql to be configure in mysql workbench
 
 ---
 
-<video src='media/Connect-RDS.mp4' width=180/>
+<video src='/media/Connect-RDS.mp4' width=180/>
